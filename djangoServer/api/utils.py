@@ -5,7 +5,7 @@ from .serializers import TransactionSerializer
 def getTransactions(request):
     transactions = Transaction.objects.all()
     transactionSerializer = TransactionSerializer(transactions,many = True) 
-    return Response(transactionSerializer.data,safe=False)
+    return Response(transactionSerializer.data)
 
 
 def createTransactions(request):
